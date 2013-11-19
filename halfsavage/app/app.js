@@ -19,4 +19,13 @@ Ember.RSVP.configure('onerror', function(error) {
   }
 });
 
+// reopen route class to set up default nav and header behavior
+Ember.Route.reopen({
+  renderTemplate: function(){
+    this.render();
+    this.render('header', { into: 'application', outlet: 'header', controller: 'header'});
+    this.render('navbar', { into: 'application', outlet: 'navbar', controller: 'navbar'});
+  }
+});
+
 export default App;
