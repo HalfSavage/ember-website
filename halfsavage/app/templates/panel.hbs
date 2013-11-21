@@ -1,0 +1,11 @@
+  <form class="navbar-right navbar-form search">
+    <span class="fa fa-search"></span>
+    {{input value=search}}
+  </form>
+
+  {{! navbar panel control components}}
+  <div class="navbar-right">
+  {{#each controls}}
+    {{panel-control data=this}}
+  {{/each}}
+  </div>

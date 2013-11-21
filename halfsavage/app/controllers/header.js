@@ -1,3 +1,6 @@
 export default Ember.ObjectController.extend({
-   style:'background:url("assets/img/banner-bg.jpg") no-repeat center center fixed; background-size:cover;'
+  style:function(){
+    return 'background:url("'+this.get('background')+'") no-repeat center center fixed; background-size:cover;';
+  }.property('background'),
+  background:'assets/img/banner-bg.jpg'
 });

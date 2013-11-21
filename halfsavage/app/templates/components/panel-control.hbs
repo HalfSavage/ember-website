@@ -1,0 +1,8 @@
+
+  <a href="#" {{action 'open'}} class="navbar-link">
+  <span {{bindAttr class=":fa data.icon"}}> {{data.name}}</span>
+  {{#if data.count}}<span class="item-count">{{data.count}}</span>{{/if}}
+  </a>
+  <div {{bindAttr class=":panel-control isClosed:hide"}}>
+    <h3>{{data.name}}</h3>
+  </div>

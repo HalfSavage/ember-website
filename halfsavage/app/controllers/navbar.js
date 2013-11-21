@@ -1,3 +1,3 @@
 export default Ember.ObjectController.extend({
-   nav:['one','two','three']
+   nav:['home','forums','events']
 });
