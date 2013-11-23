@@ -1,0 +1,11 @@
+<h3>Settings</h3>
+<h4>Account Status</h4>
+<p>You've been a member for {{account.membershipInDays}} days!<p>
+<p>{{account.memberStatus}}</p>
+<p><a href="#">Change Subscription Settings</a></p>
+<h4>Themes</h4>
+<radio>
+{{#each theme in themes}}
+    <option {{bindAttr value=theme}}>{{theme}}</option>
+{{/each}}
+</radio>

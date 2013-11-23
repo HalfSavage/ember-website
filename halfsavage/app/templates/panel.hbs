@@ -5,7 +5,13 @@
 
   {{! navbar panel control components}}
   <div class="navbar-right">
-  {{#each controls}}
-    {{panel-control data=this}}
-  {{/each}}
+    {{#panel-control name='notifications' icon='fa-laptop' count=notificationCount action='open'}}
+      {{outlet notifications}}
+    {{/panel-control}}
+    {{#panel-control name='messages' icon='fa-envelope-o' action='open'}}
+      blah
+    {{/panel-control}}
+    {{#panel-control icon='fa-gear' action='open'}}
+      {{outlet settings}}
+    {{/panel-control}}
   </div>

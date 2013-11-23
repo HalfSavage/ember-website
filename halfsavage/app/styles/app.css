@@ -28,11 +28,12 @@ html, body {
   color: #cccccc;
   content: "/\00a0";
 }
-
+.content {
+  margin-left:20px;
+}
 .navbar {
   padding-left:20px;
 }
-
 .search input{
   border-radius:10px;
 }
@@ -63,11 +64,27 @@ html, body {
 }
 .panel-control{
   position:absolute;
-  padding:0 20px 20px;
-  left:-50px;
+  padding:0 4px 10px;
+  left:-100px;
   top:30px;
   width:200px;
   height:300px;
   background:#FFF;
   box-shadow:-4px 4px 10px #333;
+}
+.panel-control .content{
+  height:240px;
+  overflow-y:scroll;
+  margin:0px;
+  padding:0px;
+}
+.panel-control .content ul{
+  background:#DDD;
+  margin:0px;
+  padding:1px 0px;
+}
+.panel-control .content li{
+  list-style:none;
+  background:#FFF;
+  margin:3px;
 }
