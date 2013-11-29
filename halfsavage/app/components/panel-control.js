@@ -1,10 +1,14 @@
-export default Ember.Component.extend({
+var PanelControlComponent = Em.Component.extend({
   classNames:['navbar-text','panel'],
   actions:{
     open:function(){
-      //this.toggleProperty('isClosed');
-      this.sendAction('action',this);
+      if(this.get('data.isClosed')){
+        this.sendAction();
+      }
+      this.toggleProperty('data.isClosed');
     }
   },
-  isClosed:true
+  action:'close'
 });
+
+export default PanelControlComponent;

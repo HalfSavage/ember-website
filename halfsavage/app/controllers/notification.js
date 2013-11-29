@@ -1,4 +1,4 @@
-export default Ember.ObjectController.extend({
-  title:'title',
-  content:'default text'
+var NotificationController = Em.ObjectController.extend({
 });
+
+export default NotificationController;

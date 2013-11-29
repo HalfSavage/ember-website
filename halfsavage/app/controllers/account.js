@@ -1,11 +1,10 @@
-export default Ember.ObjectController.extend({
+var AccountController = Em.ObjectController.extend({
   membershipInDays:function(){
     var moment = window.moment;
-    var d = this.get('joinDate');
-    var days = moment(moment()).diff(moment(d,"YYYYMMDD"),'days');
-    console.log('d');
-    return days;
+    return moment(moment()).diff(moment(this.get('joinDate'),"YYYYMMDD"),'days');
   }.property('joinDate'),
   joinDate:null,
   memberStatus:null
 });
+
+export default AccountController;

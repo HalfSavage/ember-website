@@ -1,3 +1,4 @@
-export default Ember.Route.extend({
+var EventsRoute = Em.Route.extend({
 
 });
+export default EventsRoute;

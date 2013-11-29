@@ -1,12 +1,16 @@
-export default Ember.ObjectController.extend({
-  needs:'notifications',
+var PanelController = Em.ObjectController.extend({
+  needs:['notifications','messages'],
   notificationCount: function(){
-    return this.get('controllers.notifications').get('length');
-  }.property(),
+    return this.get('controllers.notifications.length');
+  }.property('controllers.notifications.length'),
+  messageCount: function(){
+    return this.get('controllers.messages.length');
+  }.property('controllers.messages.length'),
   actions:{
-    open:function(param){
-      //console.log('open',param);
-      param.toggleProperty('isClosed');
+    close:function(param){
+      this.set('menu.notifications.isClosed',true);
+      this.set('menu.messages.isClosed',true);
+      this.set('menu.settings.isClosed',true);
     }
   },
   menu:{
@@ -27,3 +31,4 @@ export default Ember.ObjectController.extend({
     }
   }
 });
+export default PanelController;

@@ -1,14 +1,17 @@
 import AccountController from 'appkit/controllers/account';
-export default Ember.Route.extend({
+var ApplicationRoute = Em.Route.extend({
   model: function(){
     return testdata;
   },
   setupController: function(controller, model){
-    var notifications = this.controllerFor('notifications');
-    var account = this.controllerFor('account');
-    notifications.set('model', model.notifications);
-    account.set('model',model.account);
-    //console.log('setting notifications',notifications.get('length'));
+    this.controllerFor('notifications').set('model', this.store.find('notification'));/*.then(function(items) {
+      return items.map(function(item) {
+        return [item.get('type'),item.get('data'), item.get('viewed')];
+      });
+    }));*/
+    this.controllerFor('messages').set('model', this.store.find('message'));
+    this.controllerFor('account').setProperties(model.account);
+    this.controllerFor('settings').setProperties(model.settings);
 
   },
   renderTemplate: function(){
@@ -17,36 +20,19 @@ export default Ember.Route.extend({
     this.render('navbar', { into: 'application', outlet: 'navbar', controller: 'navbar'});
     this.render('panel', { into: 'navbar', outlet: 'panel', controller: 'panel'});
     this.render('notifications', { into: 'panel', outlet: 'notifications', controller: 'notifications'});
+    this.render('messages', { into: 'panel', outlet: 'messages', controller: 'messages'});
     this.render('settings', { into: 'panel', outlet: 'settings', controller: 'settings'});
   }
 });
+
+export default ApplicationRoute;
+
 var testdata = {
       account:{
         joinDate:'20121212',
         memberStatus:'GOLD PLATED'
       },
       settings:{
-
-      },
-      notifications:[
-          {
-              title:"stuff",
-              content:"some stuff happened."
-          },
-          {
-              title:"things",
-              content:"some things happened."
-          },
-          {
-              title:"such notify",
-              content:"consider yourself notified."
-          },
-          {
-              title:"yep",
-              content:"super notified, brah."
-          }
-      ],
-      messages:{
-
+        theme:'blue'
       }
     };

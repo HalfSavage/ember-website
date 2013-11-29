@@ -1,2 +1,4 @@
-export default Ember.ArrayController.extend({
+var NotificationsController = Em.ArrayController.extend({
+  itemController:'notification'
 });
+export default NotificationsController;

@@ -5,13 +5,13 @@
 
   {{! navbar panel control components}}
   <div class="navbar-right">
-    {{#panel-control name='notifications' icon='fa-laptop' count=notificationCount action='open'}}
+    {{#panel-control data=menu.notifications count=notificationCount}}
       {{outlet notifications}}
     {{/panel-control}}
-    {{#panel-control name='messages' icon='fa-envelope-o' action='open'}}
-      blah
+    {{#panel-control data=menu.messages count=messageCount}}
+      {{outlet messages}}
     {{/panel-control}}
-    {{#panel-control icon='fa-gear' action='open'}}
+    {{#panel-control data=menu.settings}}
       {{outlet settings}}
     {{/panel-control}}
   </div>
