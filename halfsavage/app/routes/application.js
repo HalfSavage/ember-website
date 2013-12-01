@@ -4,12 +4,9 @@ var ApplicationRoute = Em.Route.extend({
     return testdata;
   },
   setupController: function(controller, model){
-    this.controllerFor('notifications').set('model', this.store.find('notification'));/*.then(function(items) {
-      return items.map(function(item) {
-        return [item.get('type'),item.get('data'), item.get('viewed')];
-      });
-    }));*/
+    this.controllerFor('notifications').set('model', this.store.find('notification'));
     this.controllerFor('messages').set('model', this.store.find('message'));
+    this.controllerFor('members').set('model', this.store.find('member'));
     this.controllerFor('account').setProperties(model.account);
     this.controllerFor('settings').setProperties(model.settings);
 

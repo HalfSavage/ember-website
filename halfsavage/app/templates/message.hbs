@@ -1,0 +1,10 @@
+<li {{bindAttr class="isUnread:unread"}}>
+  <h4>from {{from}}</h4>
+  <p>{{text}}</p>
+  <h5>{{dayText}} ago</h5>
+  <div class="controls">
+    <a {{action 'open'}} href="#" title="mark as read" class="mark-as-read">
+      <span {{bindAttr class=":fa isUnread:fa-circle-o:fa-dot-circle-o"}}></span>
+    </a>
+  </div>
+</li>

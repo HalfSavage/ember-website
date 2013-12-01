@@ -1,5 +1,16 @@
-<ul>
-{{#each}}
-  <li><h4>from {{from}}, {{dayText}} ago</h4><p>{{text}}</p></li>
-{{/each}}
-</ul>
+{{#if hasMessages}}
+  <ul>
+  {{#each}}
+    {{#if isUnarchived}}
+      <li {{bindAttr class="isUnread:unread"}}>
+        <h4>from {{from}}</h4>
+        <p>{{text}}</p>
+        <h5>{{dayText}} ago</h5>
+        {{notification-control isUnread=isUnread isUnarchived=isUnarchived}}
+      </li>
+    {{/if}}
+  {{/each}}
+  </ul>
+{{else}}
+    <h4>Sorry, no messages...</h4>
+{{/if}}

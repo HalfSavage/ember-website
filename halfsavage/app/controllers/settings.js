@@ -1,9 +1,7 @@
 import AccountController from 'appkit/controllers/account';
 var SettingsController = Em.ObjectController.extend({
   needs:['account'],
-  account:function(){
-    return this.get('controllers.account');
-  }.property('controllers.account'),
+  account: Em.computed.alias('controllers.account'),
   theme:null
 });
 

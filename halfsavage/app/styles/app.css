@@ -67,13 +67,13 @@ html, body {
   padding:0 4px 10px;
   left:-100px;
   top:30px;
-  width:200px;
-  height:300px;
+  width:300px;
+  height:400px;
   background:#FFF;
   box-shadow:-4px 4px 10px #333;
 }
 .panel-control .content{
-  height:240px;
+  height:340px;
   overflow-y:scroll;
   margin:0px;
   padding:0px;
@@ -84,7 +84,26 @@ html, body {
   padding:1px 0px;
 }
 .panel-control .content li{
+  position:relative;
   list-style:none;
   background:#FFF;
   margin:3px;
 }
+
+.panel-control .content li p{
+  width:246px;
+}
+
+.panel-control .content li.unread{
+  background:#DFF;
+}
+
+.panel-control .content .controls{
+  position:absolute;
+  top:2px;
+  right:10px;
+}
+.panel-control .content .controls > a:hover{
+  text-decoration: none;
+}
+

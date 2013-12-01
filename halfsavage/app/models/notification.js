@@ -1,45 +1,63 @@
 var Notification = DS.Model.extend({
   type: DS.attr(),
+  date: DS.attr(),
   data: DS.attr(),
-  viewed: DS.attr()
+  isUnread: DS.attr(),
+  isUnarchived: DS.attr()
 });
-
+/*
+types:
+  reply
+  profile
+  like
+  comment
+  new_member
+*/
 Notification.FIXTURES = [
   {
     id:1,
+    date:'20131110',
     data:{
-      title:"replied to your thread",
+      username:"joe",
+      context:"stuff is awesome",
       text:"some stuff happened.",
     },
     type:"reply",
-    viewed:false
+    isUnread:true,
+    isUnarchived:true
   },
   {
     id:2,
+    date:'20131101',
     data:{
-      title:"things",
-      text:"some things happened."
+      username:"fred",
+      context:"some things happened."
     },
     type:"reply",
-    viewed:false
+    isUnread:true,
+    isUnarchived:true
   },
   {
     id:3,
+    date:'20131120',
     data:{
-      title:"such notify",
-      text:"consider yourself notified."
+      username:"tacomaster3000"
     },
-    type:"reply",
-    viewed:false
+    type:"profile",
+    isUnread:true,
+    isUnarchived:true
   },
   {
     id:4,
+    date:'20131110',
     data:{
-      title:"yep",
-      text:"super notified, brah."
+      username:"yepnope",
+      item:"comment",
+      context:"super notified, brah."
     },
-    type:"reply",
-    viewed:false
+    type:"like",
+    isUnread:false,
+    isUnarchived:true
   }
 ];
 

@@ -5,10 +5,10 @@
 
   {{! navbar panel control components}}
   <div class="navbar-right">
-    {{#panel-control data=menu.notifications count=notificationCount}}
+    {{#panel-control data=menu.notifications count=unreadNotificationCount}}
       {{outlet notifications}}
     {{/panel-control}}
-    {{#panel-control data=menu.messages count=messageCount}}
+    {{#panel-control data=menu.messages count=unreadMessageCount}}
       {{outlet messages}}
     {{/panel-control}}
     {{#panel-control data=menu.settings}}
