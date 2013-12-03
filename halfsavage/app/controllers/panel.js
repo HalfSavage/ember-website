@@ -1,5 +1,5 @@
 var PanelController = Em.ObjectController.extend({
-  needs:['notifications','messages', 'members'],
+  needs:['notifications','messages', 'membersearch'],
   unreadNotificationCount: function(){
     return this.get('controllers.notifications.unreadCount');
   }.property('controllers.notifications.unreadCount'),
@@ -13,9 +13,9 @@ var PanelController = Em.ObjectController.extend({
       this.set('menu.settings.isClosed',true);
     }
   },
-  search: '',
-  arrangedContent: function(){
-
+  memberSearch: Em.computed.alias('controllers.membersearch.search'),
+  memberSearchMenu:{
+    isClosed:true
   },
   menu:{
     notifications:{
@@ -33,6 +33,9 @@ var PanelController = Em.ObjectController.extend({
       icon:'fa-gear',
       isClosed:true
     }
+  },
+  init:function(){
+    console.log(this.get('memberSearch.search'));
   }
 });
 export default PanelController;

@@ -19,6 +19,7 @@ var ApplicationRoute = Em.Route.extend({
     this.render('notifications', { into: 'panel', outlet: 'notifications', controller: 'notifications'});
     this.render('messages', { into: 'panel', outlet: 'messages', controller: 'messages'});
     this.render('settings', { into: 'panel', outlet: 'settings', controller: 'settings'});
+    this.render('membersearch', { into: 'panel', outlet: 'search', controller: 'membersearch'});
   }
 });
 

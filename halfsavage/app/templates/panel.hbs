@@ -1,7 +1,8 @@
-  <form class="navbar-right navbar-form search">
-    <span class="fa fa-search"></span>
-    {{input value=search}}
-  </form>
+  <div class="navbar-right search">
+    {{#member-search search=memberSearch isClosed=memberSearchMenu.isClosed}}
+      {{outlet search}}
+    {{/member-search}}
+  </div>
 
   {{! navbar panel control components}}
   <div class="navbar-right">

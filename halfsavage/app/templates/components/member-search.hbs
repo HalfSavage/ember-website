@@ -1,0 +1,8 @@
+<span class="fa fa-search"></span>
+{{input value=search size=30 placeholder="Type a member's name..." action='focus'}}
+<div {{bindAttr class=":panel-control isClosed:hide"}}>
+  <h3>Search Results for {{search}}</h3>
+  <div class="content">
+    {{yield}}
+  </div>
+</div>
