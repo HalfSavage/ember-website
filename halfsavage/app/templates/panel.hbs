@@ -1,7 +1,7 @@
   <div class="navbar-right search">
-    {{#member-search search=memberSearch isClosed=memberSearchMenu.isClosed}}
-      {{outlet search}}
-    {{/member-search}}
+    {{#search-bar search=memberSearch placeHolderText="Type a member's name..." isClosed=memberSearchMenu.isClosed}}
+      {{outlet membersearch}}
+    {{/search-bar}}
   </div>
 
   {{! navbar panel control components}}

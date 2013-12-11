@@ -2,6 +2,11 @@
 {{outlet header}}
 {{outlet navbar}}
 </header>
-<div class="content">
-{{outlet}}
+<div class="row">
+  {{#side-panel title=sidePanel.title isClosed=sidePanel.isClosed }}
+    {{outlet sidepanel}}
+  {{/side-panel}}
+<div {{bindAttr class=":content sidePanel.isClosed:col-md-11:col-md-9 sidePanel.isClosed:col-xs-11:col-xs-9"}}>
+  {{outlet}}
+</div>
 </div>

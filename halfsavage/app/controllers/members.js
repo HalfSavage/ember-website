@@ -1,5 +1,7 @@
 var MembersController = Em.ArrayController.extend({
-  itemController:'member'
+  itemController:'member',
+  sortProperties: ['username','lastName'],
+  sortAscending: true
 });
 
 export default MembersController;

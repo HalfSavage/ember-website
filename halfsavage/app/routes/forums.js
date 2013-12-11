@@ -1,6 +1,6 @@
-var ForumRoute = Em.Route.extend({
+var ForumsRoute = Em.Route.extend({
   model: function() {
-    return ['__red__', '*yellow*', '## blue'];
+    return this.store.find('forum');
   }
 });
-export default ForumRoute;
+export default ForumsRoute;

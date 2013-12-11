@@ -13,3 +13,20 @@ var MemberSearchController = Em.ArrayController.extend({
 });
 
 export default MemberSearchController;
+/**
+Some notes on member searching...
+Because of the eventual firehose of member data that we really don't
+need to keep in memory, we need to perform queries on the server
+rather than pulling in all member data and searching on the client.
+
+That makes this current approach pointless. We will need to revisit
+this once we've got an active backend that we can query.
+
+Ideally, we'll just fire off a query after typing stops for a moment.
+We can keep track of the state of the query if it's mid process.
+
+Rather than using the members controller, we should create a separate
+memberSearchResult controller or something like that. Rather than using
+Ember data with a model, just use the controller and pull in raw json
+
+*/

@@ -9,7 +9,9 @@ var Member = DS.Model.extend({
   isSuperModerator: DS.attr(),
   isBanned: DS.attr(),
   isVip: DS.attr(),
-  location: DS.belongsTo('location')
+  location: DS.belongsTo('location'),
+  posts: DS.hasMany('post'),
+  topics: DS.hasMany('topic')
 });
 
 Member.FIXTURES = [

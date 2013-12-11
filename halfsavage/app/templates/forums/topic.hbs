@@ -1,0 +1,9 @@
+{{#link-to 'forum' this.forum}}back{{/link-to}}
+{{title}}
+<ul>
+{{#each post in posts}}
+  <li>
+    {{post.text}}
+  </li>
+{{/each}}
+</ul>

@@ -1,4 +1,4 @@
 var NavbarController = Em.ObjectController.extend({
-   nav:['home','forums','events']
+   nav:[]//['home','forums','events']
 });
 export default NavbarController;

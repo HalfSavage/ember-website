@@ -1,0 +1,9 @@
+
+<h3>{{title}} forum</h3>
+<ul>
+{{#each topic in topics itemController='topic'}}
+  <li>
+    {{topic-list-item topic=topic}}
+  </li>
+{{/each}}
+</ul>

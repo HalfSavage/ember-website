@@ -1,0 +1,12 @@
+<div {{bindAttr class=":buffer isClosed:closed"}}>
+  &nbsp;
+</div>
+<div {{bindAttr class=":sidepanel-container isClosed:closed"}}>
+  <div {{bindAttr class=":sidepanel isClosed:closed"}}>
+    <div class="tab-left" {{action "open" this}}>
+        {{title}}
+    </div>
+    <span class="fa fa-lg fa-chevron-circle-left close-button"{{action "open" this}}></span>
+    {{yield}}
+  </div>
+</div>

@@ -1,0 +1,10 @@
+<div class="row">
+<h3>{{title}}</h3>{{#link-to 'forum' forum}}back to {{forum.title}}{{/link-to}}
+<ul>
+{{#each post in posts}}
+  <li>
+    {{topic-post post=post}}
+  </li>
+{{/each}}
+</ul>
+</div>
