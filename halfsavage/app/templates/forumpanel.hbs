@@ -1,8 +1,8 @@
 <div class="outlet-content">
   {{#link-to 'forums'}}<h3>Forums</h3>{{/link-to}}
-  <ul id="forumlist">
+  <ul id="draggableforumlist">
     {{#each forums}}
-      <li>{{#link-to 'forum' this}}{{title}}{{/link-to}}</li>
+      <li draggable="true">{{#link-to 'forum' this}}{{title}}{{/link-to}}</li>
     {{/each}}
   </ul>
 </div>

@@ -6,8 +6,16 @@ html, body {
 @keyframes domChanged { from { background: yellow; } }
 @-webkit-keyframes domChanged { from { background: yellow; } }
 .ember-view { animation: domChanged 1s; -webkit-animation: domChanged 1s; }
-*/
 
+.content, .content ul, .row{
+  outline:2px solid pink;
+}
+.row.post{
+  outline:1px solid orange;
+}
+.row > div{
+  outline:1px dashed yellow;
+}*/
 .page-header.banner{
   margin:0;
   padding-top:20px;
@@ -28,6 +36,7 @@ html, body {
   color: #cccccc;
   content: "/\00a0";
 }
+
 .content {
   float:left;
   transition:width .5s;
@@ -35,16 +44,7 @@ html, body {
 .content ul{
   list-style:none;
 }
-/*
-.content, .content ul, .row{
-  outline:2px solid pink;
-}
-.row.post{
-  outline:1px solid orange;
-}
-.row > div{
-  outline:1px dashed yellow;
-}*/
+
 .outlet-content{
   padding-left:20px;
   padding-top:6px;
@@ -129,20 +129,26 @@ html, body {
 .panel-control .content .controls > a:hover{
   text-decoration: none;
 }
-
+/* Sidepanel */
 .sidepanel-container{
   display:block;
   float:left;
 }
-
 .sidepanel{
   z-index:1000;
   position:absolute;
   width:180px;
-  height:560px;
+  height:600px;
   left:0;
   background:#DDD;
   transition:left .5s;
+}
+.sidepanel.closed {
+  left:-180px;
+}
+.sidepanel.closed .tab-left{
+  left:132px;
+  box-shadow:-2px 2px 2px #666;
 }
 .close-button{
   position:absolute;
@@ -159,11 +165,12 @@ html, body {
   width:120px;
   background:#DDD;
   border-radius:0 0 10px 10px;
-  box-shadow:-2px 2px 2px #666;
   font-size:1.5em;
   padding:2px 10px;
   font-weight:bold;
   -webkit-transform: rotate(-90deg);
+  -moz-transform: rotate(-90deg);
+  transform: rotate(-90deg);
   transition:all .5s;
 }
 .buffer {
@@ -174,15 +181,25 @@ html, body {
   margin:0;
   transition:width .5s;
 }
-.sidepanel.closed {
-  left:-180px;
-}
 
-.sidepanel.closed .tab-left{
-  left:132px;
-}
 .buffer.closed {
   width:60px;
   left:40px;
 }
 
+/* draggable forum list */
+[draggable]{
+  -moz-user-select: none;
+  -webkit-user-select:none;
+  -khtml-user-select:none;
+  -user-select:none;
+  -khtml-user-drag: element;
+  -webkit-user-drag: element;
+}
+#draggableforumlist ul {
+}
+#draggableforumlist li {
+  list-style:none;
+  border:1px solid #333;
+  border-radius:2px;
+}
