@@ -1,12 +1,12 @@
 var Helpers = require('../helpers');
 
-var scripts = '{app,tests}/**/*.{js,coffee}',
+var scripts = '{app,tests}/**/*.{js,coffee,em}',
     templates = 'app/templates/**/*.{hbs,handlebars,hjs,emblem}',
     styles = 'app/styles/**/*.{css,sass,scss,less,styl}',
     indexHTML = 'app/index.html',
-// removed vendor due to it causing an error in the task
-// see here for details- https://github.com/yeoman/yeoman/issues/517
-//  other = '{app,tests,public,vendor}/**/*';
+    // removed vendor due to it causing an error in the task
+    // see here for details- https://github.com/yeoman/yeoman/issues/517
+    //  other = '{app,tests,public,vendor}/**/*';
     other = '{app,tests,public}/**/*';
 
 module.exports = {

@@ -200,6 +200,6 @@ html, body {
 }
 #draggableforumlist li {
   list-style:none;
-  border:1px solid #333;
+  /*border:1px solid #333;*/
   border-radius:2px;
 }
