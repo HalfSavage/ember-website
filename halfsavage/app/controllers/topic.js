@@ -3,16 +3,12 @@ var TopicController = Em.ObjectController.extend({
     return 1;
   }.property('datePosted'),
   postText: function(){
-    console.log('posttext',this.get('posts').get('length'));
-    var first = this.get('posts').get('firstObject');
-    return first ? first.get('text') : '';
-  }.property('posts'),
+    Em.Logger.log('post',this.get('firstPost'));
+    return this.get('firstPost.text');
+  }.property('firstPost.text'),
   postedByText: function(){
-    var memberid = this.get('postedBy');
-    var member = this.store.find('member',memberid);
-    console.log('memberid',memberid,member);
-    return member.get('username');
-  }.property('postedBy')
+    return this.get('postedBy.username');
+  }.property('postedBy.username')
 });
 
 export default TopicController;

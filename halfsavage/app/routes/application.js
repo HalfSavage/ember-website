@@ -8,7 +8,7 @@ var ApplicationRoute = Em.Route.extend({
     this.controllerFor('messages').set('model', this.store.find('message'));
     this.controllerFor('members').set('model', this.store.find('member'));
     this.controllerFor('forums').set('model', this.store.find('forum'));
-    this.controllerFor('topics').set('model', this.store.find('topic'));
+    //this.controllerFor('topics').set('model', this.store.find('topic'));
     this.controllerFor('account').setProperties(model.account);
     this.controllerFor('settings').setProperties(model.settings);
 

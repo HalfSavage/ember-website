@@ -17,5 +17,5 @@ test("it exists", function(){
 });
 
 test("#model", function(){
-  deepEqual(route.model(), ['red', 'yellow', 'blue']);
+  deepEqual(route.model(), ["__red__","*yellow*","## blue"]);
 });

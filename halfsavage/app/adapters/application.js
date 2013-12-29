@@ -1,4 +1,4 @@
-
+/*
 export default DS.FixtureAdapter.extend({
   queryFixtures: function(records, query, type) {
     Em.Logger.log('queryfixtures',query);
@@ -15,4 +15,8 @@ export default DS.FixtureAdapter.extend({
     return fixtures;
   }
   //simulateRemoteResponse:false
+});
+*/
+export default DS.RESTAdapter.extend({
+  namespace: 'api'
 });

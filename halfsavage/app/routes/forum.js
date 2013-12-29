@@ -12,6 +12,7 @@ var ForumRoute = Em.Route.extend({
   },
   afterModel:function(model){
     Em.Logger.log('aftermodel',model.get('isLoaded'));
+
   },
   /*
   setupController: function(controller,model){

@@ -1,9 +1,9 @@
 var Router = Em.Router.extend(); // ensure we don't share routes between all Router instances
 
 Router.map(function() {
-  //this.route('component-test');
-  //this.route('helper-test');
-  this.resource('home', {path:''});
+  this.route('component-test');
+  this.route('helper-test');
+  this.resource('home', {path:'/home'});
   this.resource('forums', {path:'/forums'});
   // temporarily disabling slugs until api is in place
   //this.resource('forum', {path:'/forums/:forum_slug'});
